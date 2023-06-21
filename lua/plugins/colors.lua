@@ -1,11 +1,14 @@
 -- local default_theme = "gruvbox"
 -- local default_theme = "gruvbox-material"
 -- local default_theme = "darcula"
-local default_theme = "moon"
+-- local default_theme = "moon"
 -- local default_theme = "night"
 -- local default_theme = "dragon"
--- local default_theme = "wave"
+local default_theme = "wave"
 -- local default_theme = "bluloco"
+-- local default_theme = "frappe"
+-- local default_theme = "macchiato"
+-- local default_theme = "mocha"
 
 local default_scheme = "dark"
 -- local default_scheme = "light"
@@ -44,6 +47,9 @@ local function ThemeMe(theme, scheme)
     end
     theme = "kanagawa-" .. theme
     table.insert(config, { "rebelot/kanagawa.nvim" })
+  elseif table.indexOf({ "frappe", "macchiato", "mocha" }, theme) then
+    theme = "catppuccin-" .. theme
+    table.insert(config, { "catppuccin/nvim", name = "catppuccin", priority = 1000 })
   elseif theme == "darcula" then
     table.insert(config, { "doums/darcula" })
   elseif theme == "bluloco" then
