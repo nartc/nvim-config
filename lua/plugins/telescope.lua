@@ -1,3 +1,5 @@
+local Util = require("lazyvim.util")
+
 return {
   {
     "telescope.nvim",
@@ -7,6 +9,29 @@ return {
       config = function()
         require("telescope").load_extension("fzf")
       end,
+    },
+    opts = {
+      defaults = {
+        preview = {
+          hide_on_startup = true,
+        },
+        layout_config = {
+          width = 0.8,
+          horizontal = {
+            preview_width = 0.9,
+          },
+        },
+        mappings = {
+          i = {
+            ["<C-a>"] = require("telescope.actions.layout").toggle_preview,
+          },
+        },
+      },
+    },
+    keys = {
+      { "<leader><space>", Util.telescope("files", { cwd = false }), desc = "Find Files (root dir)" },
+      { "<leader>fF", Util.telescope("files"), desc = "Find Files (cwd)" },
+      { "<leader>ff", Util.telescope("files", { cwd = false }), desc = "Find Files (root dir)" },
     },
   },
 }

@@ -9,7 +9,9 @@ return {
           opts.init_options = {
             dataPaths = {
               vim.fn.getcwd() .. "/libs/angular-three/metadata.json",
+              vim.fn.getcwd() .. "/libs/angular-three-soba/metadata.json",
               vim.fn.getcwd() .. "/node_modules/angular-three/metadata.json",
+              vim.fn.getcwd() .. "/node_modules/angular-three-soba/metadata.json",
             },
             configurationSection = { "html", "css", "javascript" },
             embeddedLanguages = {

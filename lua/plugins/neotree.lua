@@ -7,7 +7,7 @@ return {
           event = "file_opened",
           handler = function()
             --auto close
-            require("neo-tree").close_all()
+            require("neo-tree.command").execute({ action = "close" })
           end,
         },
       },

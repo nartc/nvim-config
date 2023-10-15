@@ -20,3 +20,18 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.s
 vim.api.nvim_set_hl(0, "FloatBorder", {
   fg = "#d8bd92",
 })
+
+vim.filetype.add({
+  extension = {
+    mdx = "mdx",
+  },
+})
+
+vim.filetype.add({
+  extension = {
+    [".all-contributorsrc"] = ".all-contributorsrc",
+  },
+})
+
+vim.treesitter.language.register("markdown", "mdx")
+vim.treesitter.language.register("json", ".all-contributorsrc")

@@ -4,11 +4,13 @@
 -- local default_theme = "moon"
 -- local default_theme = "night"
 -- local default_theme = "dragon"
-local default_theme = "wave"
+-- local default_theme = "wave"
 -- local default_theme = "bluloco"
 -- local default_theme = "frappe"
 -- local default_theme = "macchiato"
 -- local default_theme = "mocha"
+-- local default_theme = "vscode"
+local default_theme = "ayu"
 
 local default_scheme = "dark"
 -- local default_scheme = "light"
@@ -54,13 +56,16 @@ local function ThemeMe(theme, scheme)
     table.insert(config, { "doums/darcula" })
   elseif theme == "bluloco" then
     table.insert(config, { "uloco/bluloco.nvim", dependencies = { "rktjmp/lush.nvim" } })
+  elseif theme == "vscode" then
+    table.insert(config, { "Mofiqul/vscode.nvim" })
+  elseif theme == "ayu" then
+    table.insert(config, { "Shatur/neovim-ayu" })
+    theme = theme .. "-mirage"
   end
 
   table.insert(config, {
     "LazyVim/LazyVim",
-    opts = {
-      colorscheme = theme,
-    },
+    opts = { colorscheme = theme },
   })
   vim.go.background = scheme
 
