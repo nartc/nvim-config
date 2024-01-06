@@ -24,7 +24,7 @@ function table.indexOf(t, value)
   return nil
 end
 
-local function ThemeMe(theme, scheme)
+function ThemeMe(theme, scheme)
   local config = {}
   theme = theme or default_theme
   scheme = scheme or default_scheme
@@ -63,6 +63,9 @@ local function ThemeMe(theme, scheme)
     theme = theme .. "-mirage"
   end
 
+  print("theme", theme)
+  print("scheme", scheme)
+
   table.insert(config, {
     "LazyVim/LazyVim",
     opts = { colorscheme = theme },
@@ -72,5 +75,5 @@ local function ThemeMe(theme, scheme)
   print(unpack(config))
   return config
 end
-
-return ThemeMe()
+return {}
+-- return ThemeMe()

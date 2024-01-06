@@ -4,7 +4,7 @@
 
 vim.opt.signcolumn = "yes"
 vim.opt.scrolloff = 50
-vim.opt.colorcolumn = "120"
+vim.opt.colorcolumn = "80"
 vim.opt.smartindent = true
 vim.opt.expandtab = true
 vim.opt.tabstop = 4
