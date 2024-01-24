@@ -31,7 +31,13 @@ return {
     keys = {
       { "<leader><space>", Util.telescope("files", { cwd = false }), desc = "Find Files (root dir)" },
       { "<leader>fF", Util.telescope("files"), desc = "Find Files (cwd)" },
-      { "<leader>ff", Util.telescope("files", { cwd = false }), desc = "Find Files (root dir)" },
+      {
+        "<leader>ff",
+        function()
+          require("telescope.builtin").find_files({ hidden = true, no_ignore = true })
+        end,
+        desc = "Find Files (root dir, hidden files, no ignored)",
+      },
     },
   },
 }
