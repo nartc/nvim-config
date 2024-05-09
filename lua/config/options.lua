@@ -23,7 +23,9 @@ vim.filetype.add({
   extension = { mdx = "mdx", analog = "analog" },
 })
 
-vim.filetype.add({ extension = { [".all-contributorsrc"] = ".all-contributorsrc" } })
+vim.filetype.add({
+  extension = { [".all-contributorsrc"] = ".all-contributorsrc" },
+})
 
 -- vim.treesitter.language.register("markdown", "mdx")
 vim.treesitter.language.register("angular", "analog")

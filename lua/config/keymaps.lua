@@ -17,8 +17,7 @@ vim.keymap.set("n", ":e", ":e!")
 vim.keymap.set("n", ":E", ":e!")
 
 -- prettier
-vim.keymap.set("n", ":f", vim.cmd.Prettier)
-vim.keymap.set("n", ":F", vim.cmd.Prettier)
+-- vim.keymap.set("n", ":F", vim.cmd.Prettier)
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")

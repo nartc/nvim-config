@@ -3,6 +3,7 @@ local slow_format_filetypes = {}
 return {
   {
     "stevearc/conform.nvim",
+    optional = true,
     opts = {
       formatters_by_ft = {
         ["javascript"] = { { "prettierd", "prettier" } },
@@ -23,11 +24,11 @@ return {
         ["handlebars"] = { { "prettierd", "prettier" } },
       },
     },
-    -- format_on_save = false,
+
     format_on_save = function(bufnr)
       -- Disable autoformat for files in a certain path
       local bufname = vim.api.nvim_buf_get_name(bufnr)
-      if bufname:match("/node_modules|dist/") then
+      if bufname:match("/node_modules/") then
         return
       end
 

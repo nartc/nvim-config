@@ -3,6 +3,10 @@ local Util = require("lazyvim.util")
 return {
   {
     "nvim-neo-tree/neo-tree.nvim",
+    dependencies = {
+      "vhyrro/luarocks.nvim",
+      "3rd/image.nvim",
+    },
     opts = {
       event_handlers = {
         {
@@ -16,7 +20,6 @@ return {
       filesystem = {
         window = {
           mappings = {
-            ["<leader>P"] = { "toggle_image_preview", config = { use_float = true } },
             ["Y"] = function(state)
               -- NeoTree is based on [NuiTree](https://github.com/MunifTanjim/nui.nvim/tree/main/lua/nui/tree)
               -- The node is based on [NuiNode](https://github.com/MunifTanjim/nui.nvim/tree/main/lua/nui/tree#nuitreenode)
@@ -55,14 +58,6 @@ return {
               end
             end,
           },
-        },
-        commands = {
-          toggle_image_preview = function(state)
-            local node = state.tree:get_node()
-            if node.type == "file" then
-              require("image_preview").PreviewImage(node.path)
-            end
-          end,
         },
       },
     },
